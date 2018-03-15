@@ -1,0 +1,6 @@
+---
+- hosts: workstation-c14e.rhpds.opentlc.com
+  remote_user: root
+  roles:
+    - openstack
+

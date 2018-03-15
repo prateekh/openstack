@@ -1,0 +1,10 @@
+- name: Create Router
+  os_router:
+    cloud: ospcloud
+    state: present
+    name: osprouter
+    network: Public_Network
+    external_fixed_ips:
+      - subnet: Public_Subnet
+    interfaces:
+      - Private_Subnet

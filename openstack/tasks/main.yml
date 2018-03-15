@@ -1,0 +1,7 @@
+---
+# tasks file for openstack
+#- include: public_network.yml
+#- include: private_network.yml
+#- include: router.yml
+#- include: keypair.yml
+- include: create_flavor.yml
