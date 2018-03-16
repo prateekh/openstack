@@ -1,0 +1,54 @@
+---
+# vars file for security_group
+#
+security_groups:
+  - Name: app_servers
+    Rules: 
+     - port: 8080
+       protocol: tcp
+     - port: 22
+       protocol: tcp
+     - port: -1
+       protocol: icmp
+
+
+  - Name: db_servers
+    Rules:
+      - port: 5432
+        protocol: tcp
+      - port: 22
+        protocol: tcp
+      - port: -1
+        protocol: icmp
+
+
+  - Name: frontend
+    Rules: 
+      - port: 80
+        protocol: tcp
+      - port: 22
+        protocol: tcp
+      - port: -1
+        protocol: icmp
+
+create_instance:
+  - Name: App1
+    group: apps
+    deployment: dev
+    security_groups: app_servers
+
+  - Name: App2
+    group: apps
+    deployment: dev
+    security_groups: app_servers
+
+  - Name: db
+    group: appsdb
+    deployment: dev
+    security_groups: db_servers
+
+  - Name: frontend
+    group: frontends
+    deployment: dev
+    security_groups: frontend
+
